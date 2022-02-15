@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     '@mate-academy/eslint-config-react-typescript',
     'plugin:react/recommended',
+
   ],
   rules: {
     // React
@@ -15,10 +16,12 @@ module.exports = {
     'no-unused-vars': 0,
 
     // TypeScript
+    '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/ban-types': 0,
+    '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/semi': ['error'],
   },
   parser: '@typescript-eslint/parser',

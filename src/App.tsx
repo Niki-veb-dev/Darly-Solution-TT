@@ -1,27 +1,21 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
+import {
+  Route,
+  Routes,
+} from 'react-router-dom';
 import './App.scss';
-
-interface Props {
-  onClick: () => void;
-}
-
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
-);
+import { HomePage } from './component/HomePage';
+import { LoginPage } from './component/LoginPage';
+import { NotFoundPage } from './component/NotFoundPage';
 
 export const App: React.FC = () => {
   return (
     <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 };
